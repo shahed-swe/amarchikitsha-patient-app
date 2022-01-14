@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
-function App() {
+
+// pages
+import Home from './pages/home/Index';
+import Login from './pages/auth/Login';
+// import About from './pages/about/Index';
+// import Users from './pages/users/Index';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <Routes>
+        {/* <Route path="/" element={<App />}> */}
+        {/* <Route index element={<Home />} /> */}
+        {/* <Route path="teams" element={<Teams />}> */}
+        {/* <Route path=":teamId" element={<Team />} /> */}
+        {/* <Route path="new" element={<NewTeamForm />} /> */}
+        {/* <Route index element={<LeagueStandings />} /> */}
+        {/* </Route> */}
+        {/* </Route> */}
+        <Route path="/" element={<Home/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/user" element={<h1>Contant</h1>} />
+        <Route path="*" element={<>404 Page</>} />
+      </Routes>
+    </Router>
   );
 }
 
