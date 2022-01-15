@@ -2,7 +2,7 @@ import { Layout } from "../../components/layout";
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-    const {register,handleSubmit, formState: {errors}} = useForm()
+    const {register,handleSubmit} = useForm()
 
     const onSubmit = (data) => {
         console.log(data)
