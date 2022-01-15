@@ -1,19 +1,21 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export const NavbarTop = () => {
     return (
-        <div className="flex-1 flex flex-col">
-            <nav className="px-4 flex justify-between bg-white h-16 border-b-2">
+        <div className="sticky top-0 bg-white shadow">
+            <nav className="px-4 flex justify-between bg-white h-16 border-b-2 ">
 
 
                 <ul className="flex items-center">
-
-                    <li className="h-6 w-6">
-                        <img
-                            className="h-full w-full mx-auto"
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/512px-Svelte_Logo.svg.png"
-                            alt="svelte logo" />
-                    </li>
+                    <Link to="/">
+                        <li className="h-6 w-6">
+                            <img
+                                className="h-full w-full mx-auto"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/512px-Svelte_Logo.svg.png"
+                                alt="svelte logo" />
+                        </li>
+                    </Link>
                 </ul>
 
                 <ul className="flex items-center">
