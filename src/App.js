@@ -11,6 +11,7 @@ import { FourOfFour } from './components/FourofFour/Index';
 // pages
 import Home from './pages/home/Index';
 import Login from './pages/auth/Login';
+import Registraion from './pages/auth/Registration';
 // import About from './pages/about/Index';
 // import Users from './pages/users/Index';
 
@@ -23,6 +24,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/registration" component={Registraion} />
             {/* <Route exact path="/register" component={Register} /> */}
             {/* <Route exact path="/authority" component={AuthorityRegistration} />
             <Route exact path="/reset" component={ResetRequest} />
