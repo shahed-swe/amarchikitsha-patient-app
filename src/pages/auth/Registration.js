@@ -23,21 +23,21 @@ const Registration = () => {
                             <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-2">
                                 <label className="block">
                                     <span className="block mb-1 text-xs font-medium text-gray-700 xl:col-span-6">FIrst Name</span>
-                                    <input className="form-input" type="email" placeholder="First Name" {...register("first_name", { required: "First Name is required" })} />
+                                    <input className="form-input" type="text" placeholder="First Name" {...register("first_name", { required: "First Name is required" })} />
                                 </label>
                                 <label className="block">
                                     <span className="block mb-1 text-xs font-medium text-gray-700">Last Name</span>
-                                    <input className="form-input" type="email" placeholder="Last Name" {...register("last_name", { required: "Last Name is required" })} />
+                                    <input className="form-input" type="text" placeholder="Last Name" {...register("last_name", { required: "Last Name is required" })} />
                                 </label>
                             </div>
                             
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Age</span>
-                                <input className="form-input" type="email" placeholder="Age" {...register("age", { required: "Age is required" })} />
+                                <input className="form-input" type="text" placeholder="Age" {...register("age", { required: "Age is required" })} />
                             </label>
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Address</span>
-                                <textarea className="form-input" type="email" placeholder="Address" {...register("age", { required: "Address is required" })} />
+                                <textarea className="form-input" type="text" placeholder="Address" {...register("age", { required: "Address is required" })} />
                             </label>
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Your Password</span>
@@ -45,7 +45,7 @@ const Registration = () => {
                             </label>
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Confirm Password</span>
-                                <input className="form-input" type="password" placeholder="••••••••" {...register('password', { required: "Confirm Password is required" })} />
+                                <input className="form-input" type="password" placeholder="••••••••" {...register('confirm_password', { required: "Confirm Password is required" })} />
                             </label>
                             <button type="submit" className="w-full py-3 mt-1 btn btn-primary">Registration</button>
                         </form>
