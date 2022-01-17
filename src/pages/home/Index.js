@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Layout } from "../../components/layout";
 import Doctime from  '../../assets/img/doctime.png'
 import Reneta from '../../assets/img/reneta.jpg'
