@@ -1,12 +1,38 @@
 import { Layout } from "../../components/layout";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { Requests } from '../../utils/HTTP/Index'
+import { Toastify } from "../../components/toastify";
+import { useHistory } from "react-router-dom";
 
 const Registration = () => {
     const { register, handleSubmit } = useForm()
+    const history = useHistory()
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = async (data) => {
+        try {
+            const formData = {
+                email: data.email,
+                first_name: data.first_name,
+                last_name: data.last_name,
+                password: data.password,
+                age: data.age,
+                address: data.address,
+                is_patient: true,
+                confirm_password: data.confirm_password
+            }
+
+            console.log(formData)
+            const response = await Requests.Authentication.Registration(formData)
+            if(response.status === 201){
+                Toastify.Success("Successfully Registered")
+                history.push('/login')
+            }
+        } catch (error) {
+            if(error){
+                Toastify.Error("Credential Error")
+            }
+        }
     }
 
     return (
@@ -33,11 +59,11 @@ const Registration = () => {
                             
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Age</span>
-                                <input className="form-input" type="text" placeholder="Age" {...register("age", { required: "Age is required" })} />
+                                <input className="form-input" type="number" placeholder="Age" {...register("age", { required: "Age is required" })} />
                             </label>
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Address</span>
-                                <textarea className="form-input" type="text" placeholder="Address" {...register("age", { required: "Address is required" })} />
+                                <textarea className="form-input" type="text" placeholder="Address" {...register("address", { required: "Address is required" })} />
                             </label>
                             <label className="block">
                                 <span className="block mb-1 text-xs font-medium text-gray-700">Your Password</span>

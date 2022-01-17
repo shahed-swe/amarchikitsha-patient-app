@@ -1,12 +1,26 @@
 import { Layout } from "../../components/layout";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { Requests } from '../../utils/HTTP/Index'
+import { Toastify } from "../../components/toastify";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
     const {register,handleSubmit} = useForm()
+    const history = useHistory()
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = async(data) => {
+        try {
+            const response = await Requests.Authentication.Login(data)
+            if(response.status === 200){
+                Toastify.Success("Successfully Logged In")
+                history.push('/')
+            }
+        } catch (error) {
+            if(error){
+                console.log(error)
+            }
+        }
     }
 
     return (
