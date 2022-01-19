@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Layout } from "../../components/layout";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
@@ -8,6 +9,12 @@ import { useHistory } from "react-router-dom";
 const Login = () => {
     const {register,handleSubmit} = useForm()
     const history = useHistory()
+
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        localStorage.setItem('language', 'en')
+        if (token) history.push('/')
+    }, [history])
 
     const onSubmit = async(data) => {
         try {
